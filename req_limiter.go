@@ -38,3 +38,7 @@ func (l *ReqLimiter) Wait(ctx context.Context) {
 		return
 	}
 }
+
+func (l *ReqLimiter) Allow() bool {
+	return len(l.c) < l.l
+}
