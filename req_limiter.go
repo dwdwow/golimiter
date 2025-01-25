@@ -18,7 +18,7 @@ type ReqLimiter struct {
 // it attempts to send a value to the channel. If the channel is full (limit reached),
 // the request blocks until capacity becomes available. After the specified interval,
 // the request is automatically removed from the channel.
-func NewLimiter(interval time.Duration, limit int) *ReqLimiter {
+func NewReqLimiter(interval time.Duration, limit int) *ReqLimiter {
 	return &ReqLimiter{
 		l: limit,
 		d: interval,
